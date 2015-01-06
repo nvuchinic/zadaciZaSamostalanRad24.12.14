@@ -2,15 +2,23 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-
+/**
+ * class for creating special kind of AnimatedVehicle object, so it extends AnimatedVehicle class
+ * */
 
 public class AnimatedVehicleOval extends AnimatedVehicle{
 
-	public AnimatedVehicleOval(int minX, int maxX, int roadHeight, double speed) {
+/**
+ * constructor method, it calls constructor method of superclass and passes to her received parameters 
+ * */
+public AnimatedVehicleOval(int minX, int maxX, int roadHeight, double speed) {
 		super(minX, maxX, roadHeight, speed);
 	}
 	
-	public void draw(Graphics graphics) {
+/**
+ * method for drawing the object, it calls other method(drawCar)
+ * */
+public void draw(Graphics graphics) {
 if (crashFrame > 0) {
 drawCar(graphics, Color.YELLOW);
 crashFrame--;
@@ -18,8 +26,10 @@ crashFrame--;
 drawCar(graphics, Color.BLUE);
 }
 }
-
-	protected void drawCar(Graphics g, Color c) {
+/**
+ * main method for drawing the objects
+ * */
+protected void drawCar(Graphics g, Color c) {
 		g.setColor(c);
 		g.drawOval(x, y-15, WIDTH, HEIGHT+30);
 		g.drawOval(x, y-10, WIDTH, HEIGHT+25);
@@ -43,7 +53,7 @@ drawCar(graphics, Color.BLUE);
 		g.drawLine(x+5, y+14, x+14, y+26);
 		g.drawLine(x+5, y+56, x+15, y+43);
 		g.drawLine(x+45, y+14, x+37, y+26);
-				g.drawLine(x+45, y+56, x+39, y+43);
+		g.drawLine(x+45, y+56, x+39, y+43);
 				}
 
 
