@@ -1,7 +1,9 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
-
+/**
+ * class for creating visual objects in game(obstacle on road)
+ * */
 public class Obstacle implements AnimatedGameArtifact {
 private double speed=5;
 private int x;
@@ -27,6 +29,9 @@ public void setY(int y) {
 	this.y = y;
 }
 
+/**
+ * constructor method
+ * */
 public Obstacle(int minX, int maxX){
 	this.minX=minX;
 	this.maxX=maxX;
@@ -34,6 +39,9 @@ public Obstacle(int minX, int maxX){
 	setSpeed(speed);
 }
 
+/**
+ * method for resetting the position of object(calls the setPosition method that sets the x and y coordinate for drawing the object)
+ * */
 public void resetPosition() {
 setPosition((int) (minX + Math.random() * (maxX - minX)), (int)(-30 * Math.random() * 10));
 }
@@ -48,7 +56,9 @@ public void setSpeed(double speed) {
 this.speed = speed / 4;
 }
 
-	public void draw(Graphics g) {
+/**main  method for drawing the object
+ * */
+public void draw(Graphics g) {
 //		int xpoints[] = {100, 110,115,120,130,135,145,150,145,150,140,135,130,125,120,115,110,115,110};
 //	    int ypoints[] = {100, 95,90,95,90,95,90,100,100,110,115,110,115,110,115,110,115,105,100};
 		int xpoints[] = {x, x+10,x+15,x+20,x+30,x+35,x+45,x+50,x+45,x+50,x+40,x+35,x+30,x+25,x+20,x+15,x+10,x+15,x+10};
