@@ -1,6 +1,10 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * class for creating AnimatedVehicle objects, it extends Vehicle class and implements AnimatedGameArtifact;
+ * It implements (overrides) animateFrame method
+ * */
 public class AnimatedVehicle extends Vehicle implements AnimatedGameArtifact {
 //private double speed;
 //private int roadHeight;
